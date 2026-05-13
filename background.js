@@ -1,0 +1,3 @@
+chrome.runtime.onInstalled.addListener(()=>chrome.alarms.clearAll());
+chrome.alarms.onAlarm.addListener(async alarm=>{if(!alarm.name.startsWith('ev-'))return;const id=alarm.name.slice(3);const d=(await chrome.storage.local.get('gameEventTrackerDataV2')).gameEventTrackerDataV2;const e=d?.events?.find(x=>x.id===id);if(!e)return;chrome.notifications.create({type:'basic',iconUrl:'icon128.png',title:'Game Event Reminder',message:`${e.game}: ${e.title} due today`,priority:2});});
+chrome.runtime.onMessage.addListener((m)=>{if(m.type==='OPEN_TRACKER')chrome.tabs.create({url:chrome.runtime.getURL('tracker.html')});});

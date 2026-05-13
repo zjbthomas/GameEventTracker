@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Game Event Tracker",
+  "version": "0.2.0",
+  "description": "Track limited-time game events and daily tasks.",
+  "permissions": ["storage", "alarms", "notifications"],
+  "host_permissions": [
+    "https://store.steampowered.com/*"
+  ],
+  "action": {
+    "default_title": "Game Event Tracker",
+    "default_popup": "popup.html"
+  },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://store.steampowered.com/*"],
+    "js": ["steam-content.js"],
+    "css": ["steam-content.css"],
+    "run_at": "document_idle"
+  }],
+  "icons": {"16":"icon16.png","48":"icon48.png","128":"icon128.png"}
+}

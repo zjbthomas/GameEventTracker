@@ -1,0 +1,1 @@
+(()=>{if(document.getElementById('get-steam-btn'))return;const btn=document.createElement('button');btn.id='get-steam-btn';btn.textContent='Event Tracker';btn.onclick=()=>chrome.runtime.sendMessage({type:'OPEN_TRACKER'});(document.querySelector('#global_action_menu')||document.body).appendChild(btn);})();

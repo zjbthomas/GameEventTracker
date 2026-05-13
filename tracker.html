@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Game Event Tracker</title><link rel='stylesheet' href='tracker.css'></head><body>
+<a class='repo-ribbon' href='https://github.com/zjbthomas/GameEventTracker' target='_blank' rel='noreferrer'>GitHub</a>
+<header class='topbar'><h1>Game Event Tracker</h1></header>
+<main>
+<section class='calendar-card'>
+  <div class='cal-head'><button id='prev' class='nav-btn'>◀</button><h2 id='month'></h2><button id='next' class='nav-btn'>▶</button></div>
+  <div id='grid' class='grid'></div>
+  <div class='below-cal'><button id='addEventBtn' class='action-btn'>+ Add Event</button></div>
+  <div id='dayEvents' class='day-events'>Select a day to view events.</div>
+  <div id='eventUndoBar' class='undo hidden'><span id='eventUndoText'></span> <button id='eventUndoBtn'>Undo</button></div>
+</section>
+<section class='todo-card'>
+  <h3>To-Do Tasks</h3>
+  <form id='todoForm' class='todo-form'><input id='todoText' placeholder='Task name' required><input id='todoDue' type='date'><button class='action-btn' type='submit'>Add</button></form>
+  <div class='todo-table-head'><span>Done</span><span>Task</span><span>Due Date</span><span></span></div>
+  <ul id='todoList' class='todo-list'></ul>
+  <div id='taskUndoBar' class='undo hidden'><span id='taskUndoText'></span> <button id='taskUndoBtn'>Undo</button></div>
+</section>
+</main>
+<footer class='page-actions'>
+  <button id='exportBtn' class='action-btn'>Export</button>
+  <button id='importBtn' class='action-btn'>Import</button>
+  <input id='importFile' type='file' accept='application/json' hidden>
+</footer>
+<div id='dragHint' class='drag-hint hidden'>Drag to a day, then release</div>
+<div id='eventModal' class='modal hidden'><div class='modal-panel'><h3 id='editorTitle'>Add / Edit Event</h3><form id='eventForm'><label>Game<input id='game' required><div id='suggestions' class='suggestions'></div></label><label>Title<input id='title' required></label><div class='dates'><label>Start<input id='start' type='date' required></label><label>End<input id='end' type='date' required></label><label>Reminder<input id='due' type='date'></label></div><label>Notes<textarea id='notes'></textarea></label><div class='row'><button type='submit'>Save</button><button type='button' id='closeModal'>Close</button></div></form></div></div>
+<script src='tracker.js'></script></body></html>
