@@ -11,7 +11,7 @@
 </section>
 <section class='todo-card'>
   <h3>To-Do Tasks</h3>
-  <form id='todoForm' class='todo-form'><input id='todoText' placeholder='Task name' required><input id='todoDue' type='date'><button class='action-btn' type='submit'>Add</button></form>
+  <div class='below-cal'><button id='addTaskBtn' class='action-btn'>+ Add Task</button></div>
   <div class='todo-table-head'><span>Done</span><span>Task</span><span>Due Date</span><span></span></div>
   <ul id='todoList' class='todo-list'></ul>
   <div id='taskUndoBar' class='undo hidden'><span id='taskUndoText'></span> <button id='taskUndoBtn'>Undo</button></div>
@@ -24,4 +24,5 @@
 </footer>
 <div id='dragHint' class='drag-hint hidden'>Drag to a day, then release</div>
 <div id='eventModal' class='modal hidden'><div class='modal-panel'><h3 id='editorTitle'>Add / Edit Event</h3><form id='eventForm'><label>Game<input id='game' required><div id='suggestions' class='suggestions'></div></label><label>Title<input id='title' required></label><div class='dates'><label>Start<input id='start' type='date' required></label><label>End<input id='end' type='date' required></label><label>Reminder<input id='due' type='date'></label></div><div class='dates'><label>Event Color<input id='color' type='color' value='#66c0f4'></label><label>Completion Slot<select id='completionSlot'><option value='none'>None</option><option value='day'>Per Day</option><option value='week'>Per Week</option><option value='total'>Whole Event</option></select></label><label>Required / Slot<input id='completionRequired' type='number' min='1' placeholder='e.g. 3'></label></div><label>Notes<textarea id='notes'></textarea></label><div class='row'><button type='submit'>Save</button><button type='button' id='closeModal'>Close</button></div></form></div></div>
+<div id='taskModal' class='modal hidden'><div class='modal-panel'><h3>Add / Edit Task</h3><form id='taskForm'><label>Task<input id='taskName' required></label><label>Due Date<input id='taskDate' type='date'></label><label>Notes<textarea id='taskNotes'></textarea></label><div class='row'><button type='submit'>Save</button><button type='button' id='closeTaskModal'>Close</button></div></form></div></div>
 <script src='tracker.js'></script></body></html>
